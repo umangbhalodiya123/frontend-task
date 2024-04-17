@@ -2,23 +2,26 @@ import type { Metadata } from 'next'
 import { CssBaseline, ThemeProvider } from '@mui/material'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
 import { theme } from '@/utils'
+import { AuthProvider, StoreProvider } from '@/providers'
 
 export const metadata: Metadata = {
   title: 'Frontend Test',
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+type P = Readonly<{
   children: React.ReactNode
-}>) {
+}>
+
+export default function RootLayout({ children }: P) {
   return (
     <html lang="en">
       <body>
         <AppRouterCacheProvider options={{ enableCssLayer: true }}>
           <ThemeProvider theme={theme}>
             <CssBaseline />
-            {children}
+            <StoreProvider>
+              <AuthProvider>{children}</AuthProvider>
+            </StoreProvider>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

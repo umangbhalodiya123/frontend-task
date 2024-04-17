@@ -1,3 +1,4 @@
+import { Logout } from '@/component'
 import { Box, Container, Link, Typography } from '@mui/material'
 import NextLink from 'next/link'
 
@@ -20,6 +21,8 @@ export default function Home() {
           Go to the about page
         </Link>
       </Box>
+
+      <Logout />
     </Container>
   )
 }

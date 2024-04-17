@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`convertToGraphData converts data correctly for age 1`] = `
+[
+  {
+    "label": "21",
+    "value": 2,
+  },
+  {
+    "label": "23",
+    "value": 6.666666666666667,
+  },
+  {
+    "label": "24",
+    "value": 4.5,
+  },
+  {
+    "label": "26",
+    "value": 8,
+  },
+  {
+    "label": "31",
+    "value": 4,
+  },
+  {
+    "label": "37",
+    "value": 5,
+  },
+  {
+    "label": "39",
+    "value": 9,
+  },
+]
+`;
+
+exports[`convertToGraphData converts data correctly for department 1`] = `
+[
+  {
+    "label": "Business Development",
+    "value": 7,
+  },
+  {
+    "label": "Legal",
+    "value": 4,
+  },
+  {
+    "label": "Product Management",
+    "value": 2,
+  },
+  {
+    "label": "Research and Development",
+    "value": 8,
+  },
+  {
+    "label": "Sales",
+    "value": 5,
+  },
+  {
+    "label": "Services",
+    "value": 5.666666666666667,
+  },
+  {
+    "label": "Training",
+    "value": 7,
+  },
+]
+`;
+
+exports[`convertToGraphData converts data correctly for team_size 1`] = `
+[
+  {
+    "label": "3",
+    "value": 7,
+  },
+  {
+    "label": "6",
+    "value": 2,
+  },
+  {
+    "label": "7",
+    "value": 8,
+  },
+  {
+    "label": "9",
+    "value": 4.666666666666667,
+  },
+  {
+    "label": "11",
+    "value": 5,
+  },
+  {
+    "label": "15",
+    "value": 9,
+  },
+  {
+    "label": "17",
+    "value": 5,
+  },
+]
+`;

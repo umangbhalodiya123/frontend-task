@@ -1,19 +1,20 @@
-import { render, screen } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
+import { screen } from '@testing-library/react'
 import { Login } from '../Login'
+import { renderWithProviders } from '@/utils/renderWithProviders'
 
 describe('Login', () => {
   it('renders correctly', () => {
-    render(<Login />)
+    renderWithProviders(<Login />)
 
     const loginContainer = screen.getByLabelText('login')
     expect(loginContainer).toBeInTheDocument()
   })
 
-  // it('handles form submission', () => {
-  //   render(<Login />)
+  it('renders matches snapshot', () => {
+    renderWithProviders(<Login />)
 
-  //   const loginContainer = screen.getByLabelText('login')
-  //   expect(loginContainer).toBeInTheDocument()
-  // })
+    const loginContainer = screen.getByLabelText('login')
+    expect(loginContainer).toBeInTheDocument()
+    expect(loginContainer).toMatchSnapshot()
+  })
 })

@@ -75,7 +75,7 @@ type P = Readonly<{
 
 export const DataTable = ({ data, loading = false }: P) => {
   return (
-    <Box sx={{ width: '100%', height: 650 }}>
+    <Box sx={{ width: '100%', height: 650 }} aria-label="data table">
       <DataGrid
         rows={data || []}
         columns={columns}

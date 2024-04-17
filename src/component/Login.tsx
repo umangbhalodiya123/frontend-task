@@ -54,6 +54,7 @@ export const Login = () => {
         </Typography>
         <Box component="form" onSubmit={onSubmit} noValidate sx={{ mt: 1 }}>
           <TextField
+            aria-label="email"
             margin="normal"
             required
             fullWidth
@@ -66,6 +67,7 @@ export const Login = () => {
           <FormControl margin="normal" variant="outlined" fullWidth>
             <InputLabel htmlFor="password">Password</InputLabel>
             <OutlinedInput
+              aria-label="password"
               id="password"
               name="password"
               type={showPassword ? 'text' : 'password'}

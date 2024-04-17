@@ -8,7 +8,6 @@ export const employeesApiSlice = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: API_URL,
     prepareHeaders: (headers) => {
-      console.log('API_KEY', API_KEY)
       if (API_KEY) headers.set('X-API-Key', API_KEY)
       return headers
     },

@@ -1,28 +1,24 @@
+import { Employee } from '@/types'
+import { API_KEY, API_URL } from '@/utils'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-interface Employee {
-  id: number
-  employee: string
-  author: string
-}
-
-interface EmployeesApiResponse {
-  employees: Employee[]
-  total: number
-  skip: number
-  limit: number
-}
+type EmployeesApiResponse = Employee[]
 
 export const employeesApiSlice = createApi({
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://api.mockaroo.com/api/502602f0?count=100',
+    baseUrl: API_URL,
+    prepareHeaders: (headers) => {
+      console.log('API_KEY', API_KEY)
+      if (API_KEY) headers.set('X-API-Key', API_KEY)
+      return headers
+    },
   }),
   reducerPath: 'employeesApi',
   tagTypes: ['Employees'],
   endpoints: (build) => ({
-    getEmployees: build.query<EmployeesApiResponse, number>({
-      query: (limit = 10) => `?count=${limit}`,
-      providesTags: (result, error, id) => [{ type: 'Employees', id }],
+    getEmployees: build.query<EmployeesApiResponse, void>({
+      query: () => '?count=1000',
+      providesTags: (result, error, id) => [{ type: 'Employees', id: 'LIST' }],
     }),
   }),
 })

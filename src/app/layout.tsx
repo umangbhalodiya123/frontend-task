@@ -8,9 +8,7 @@ export const metadata: Metadata = {
   title: 'Frontend Test',
 }
 
-type P = Readonly<{
-  children: React.ReactNode
-}>
+type P = Readonly<{ children: React.ReactNode }>
 
 export default function RootLayout({ children }: P) {
   return (

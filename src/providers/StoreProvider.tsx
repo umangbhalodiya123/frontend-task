@@ -3,16 +3,13 @@ import { Loader } from '@/component'
 import type { AppStore } from '@/store'
 import { store, persistor } from '@/store'
 import { setupListeners } from '@reduxjs/toolkit/query'
-import type { ReactNode } from 'react'
 import { useEffect, useRef } from 'react'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 
-interface Props {
-  readonly children: ReactNode
-}
+type P = Readonly<{ children: React.ReactNode }>
 
-export const StoreProvider = ({ children }: Props) => {
+export const StoreProvider = ({ children }: P) => {
   const storeRef = useRef<AppStore | null>(null)
 
   if (!storeRef.current) {

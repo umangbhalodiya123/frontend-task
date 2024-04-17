@@ -1,6 +1,8 @@
 import { Dashboard, Info, Person, Settings } from '@mui/icons-material'
 
-export const API_URL = 'https://jsonplaceholder.typicode.com'
+export const API_URL = 'https://api.mockaroo.com/api/502602f0'
+
+export const API_KEY = process.env.NEXT_PUBLIC_API_KEY
 
 export const CREDENTIALS = [
   {

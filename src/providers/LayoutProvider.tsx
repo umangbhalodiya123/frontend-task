@@ -5,9 +5,7 @@ import Container from '@mui/material/Container'
 import { useState } from 'react'
 import { Header, Navbar } from '@/component'
 
-type P = Readonly<{
-  children: React.ReactNode
-}>
+type P = Readonly<{ children: React.ReactNode }>
 
 export const LayoutProvider = ({ children }: P) => {
   const [open, setOpen] = useState(true)
@@ -31,7 +29,7 @@ export const LayoutProvider = ({ children }: P) => {
         }}
       >
         <Toolbar />
-        <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+        <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
           {children}
         </Container>
       </Box>

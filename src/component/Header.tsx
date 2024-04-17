@@ -1,9 +1,8 @@
 'use client'
-
 import { logoutAction } from '@/store/auth/authSlice'
 import { useAppDispatch } from '@/store/hooks'
 import { NAVBAR_ITEMS, NAVBAR_WIDTH } from '@/utils'
-import { Menu as MenuIcon } from '@mui/icons-material'
+import { AccountCircle, Menu as MenuIcon } from '@mui/icons-material'
 import {
   IconButton,
   Menu,
@@ -18,9 +17,11 @@ import { styled } from '@mui/material/styles'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
-type AppBarProps = MuiAppBarProps & {
-  open?: boolean
-}
+type AppBarProps = Readonly<
+  MuiAppBarProps & {
+    open?: boolean
+  }
+>
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: (prop) => prop !== 'open',
@@ -96,7 +97,7 @@ export const Header = ({ open, toggleDrawer }: P) => {
             onClick={handleMenu}
             color="inherit"
           >
-            <Avatar alt="John Doe">JD</Avatar>
+            <AccountCircle />
           </IconButton>
 
           <Menu

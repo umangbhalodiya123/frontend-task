@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { CssBaseline, ThemeProvider } from '@mui/material'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter'
 import { theme } from '@/utils'
-import { AuthProvider, StoreProvider } from '@/providers'
+import { AuthProvider, LayoutProvider, StoreProvider } from '@/providers'
 
 export const metadata: Metadata = {
   title: 'Frontend Test',
@@ -20,7 +20,9 @@ export default function RootLayout({ children }: P) {
           <ThemeProvider theme={theme}>
             <CssBaseline />
             <StoreProvider>
-              <AuthProvider>{children}</AuthProvider>
+              <AuthProvider>
+                <LayoutProvider>{children}</LayoutProvider>
+              </AuthProvider>
             </StoreProvider>
           </ThemeProvider>
         </AppRouterCacheProvider>

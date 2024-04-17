@@ -13,6 +13,7 @@ import {
   InputAdornment,
   InputLabel,
   OutlinedInput,
+  Stack,
   TextField,
   Typography,
 } from '@mui/material'
@@ -94,6 +95,22 @@ export const Login = () => {
             {status === 'loading' ? 'Logging in...' : 'Login'}
           </Button>
         </Box>
+      </Box>
+
+      <Box>
+        <Stack
+          justifyContent="center"
+          alignItems="center"
+          spacing={1}
+          mt={2}
+          color="text.secondary"
+        >
+          <Typography color="secondary" sx={{ fontWeight: 'bold' }}>
+            Hint
+          </Typography>
+          <Typography>Email: admin@mail.com</Typography>
+          <Typography>Password: Admin@123</Typography>
+        </Stack>
       </Box>
     </Container>
   )

@@ -1,15 +1,9 @@
-import { Box, Skeleton, Stack, Typography } from '@mui/material'
+'use client'
+import { Skeleton, Stack, Typography } from '@mui/material'
 
 export default function About() {
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
+    <>
       <Typography variant="h4" component="h1" sx={{ mb: 4 }}>
         About Page
       </Typography>
@@ -20,6 +14,6 @@ export default function About() {
         <Skeleton animation={false} height={100} />
         <Skeleton animation={false} height={100} />
       </Stack>
-    </Box>
+    </>
   )
 }

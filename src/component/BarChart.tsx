@@ -38,12 +38,16 @@ export const BarChart = ({
             ],
             primaryAxis: {
               getValue: (datum) => datum.label,
-              min: 0,
             },
             secondaryAxes: [
               {
                 getValue: (datum) => datum.value,
                 elementType: 'bar',
+                min: 0,
+                max: 10,
+                formatters: {
+                  tooltip: (datum: number) => datum?.toFixed(2),
+                },
               },
             ],
             dark: true,

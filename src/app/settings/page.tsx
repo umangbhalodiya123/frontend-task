@@ -1,16 +1,9 @@
-import { Box, Grid, Skeleton, Stack, Typography } from '@mui/material'
+'use client'
+import { Grid, Skeleton, Stack, Typography } from '@mui/material'
 
 export default function Settings() {
   return (
-    <Box
-      sx={{
-        my: 4,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}
-    >
+    <>
       <Typography variant="h4" component="h1" sx={{ mb: 4 }}>
         Settings Page
       </Typography>
@@ -36,6 +29,6 @@ export default function Settings() {
           </Stack>
         </Grid>
       </Grid>
-    </Box>
+    </>
   )
 }

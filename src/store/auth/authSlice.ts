@@ -42,6 +42,9 @@ export const authSlice = createAppSlice({
     logoutAction: create.reducer((state) => {
       state.value = null
     }),
+    authStatusIdleAction: create.reducer((state) => {
+      state.status = 'idle'
+    }),
   }),
   selectors: {
     selectUser: (auth) => auth.value,
@@ -49,6 +52,7 @@ export const authSlice = createAppSlice({
   },
 })
 
-export const { loginAction, logoutAction } = authSlice.actions
+export const { loginAction, logoutAction, authStatusIdleAction } =
+  authSlice.actions
 
 export const { selectUser, selectStatus } = authSlice.selectors

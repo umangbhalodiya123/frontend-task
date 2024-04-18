@@ -30,7 +30,17 @@ export const LayoutProvider = ({ children }: P) => {
       >
         <Toolbar />
         <Container maxWidth="xl" sx={{ mt: 4, mb: 4 }}>
-          {children}
+          <Box
+            sx={{
+              my: 4,
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            {children}
+          </Box>
         </Container>
       </Box>
     </Box>
